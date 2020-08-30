@@ -1,7 +1,7 @@
 {
   "name": "ngx-keypad",
   "author": "Shady Nagy <info@shadynagy.com>",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "license": "MIT",
   "description": "An enterprise-class UI components based on Keypad and Angular",
   "keywords": [
