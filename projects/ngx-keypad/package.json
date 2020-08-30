@@ -1,0 +1,32 @@
+{
+  "name": "ngx-keypad",
+  "author": "ShadyNagy (info@shadynagy.com)",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "An enterprise-class UI components based on Keypad and Angular",
+  "keywords": [
+    "keypad",
+    "design",
+    "angular",
+    "ui",
+    "framework",
+    "frontend"
+  ],
+  "homepage": "http://shadynagy.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShadyNagy/ngx-keypad"
+  },
+  "bugs": {
+    "url": "https://github.com/ShadyNagy/ngx-keypad/issues"
+  },
+  "peerDependencies": {
+    "@angular/common": "^9.1.12",
+    "@angular/core": "^9.1.12",
+    "bootstrap": "^4.5.2",
+    "bootswatch": "4.1.3"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0"
+  }
+}
