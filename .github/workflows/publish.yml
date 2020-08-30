@@ -22,6 +22,6 @@ jobs:
       run: npm run build ngx-keypad -- --prod
     - name: Publish if version has been updated
       uses: JS-DevTools/npm-publish@v1
-      with: # All of theses inputs are optional                       
-        package: "./dist/ngx-keypad/package.json"
-        token: ${{ secrets.GITHUB_TOKEN }}
+      with: # All of theses inputs are optional
+        token: ${{ secrets.NPM_AUTH_TOKEN }} # You need to set this in your repo settings
+        package: "./dist/ngx-keypad/package.json"        
