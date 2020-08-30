@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master # Change this to your default branch
+    paths:
+      - 'projects/ngx-keypad/src/**'
 jobs:
   npm-publish:
     name: npm-publish
