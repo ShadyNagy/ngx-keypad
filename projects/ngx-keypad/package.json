@@ -5,6 +5,8 @@
   "license": "MIT",
   "description": "An enterprise-class UI components based on Keypad and Angular",
   "keywords": [
+    "ngx",
+    "ngx-keypad",
     "keypad",
     "design",
     "angular",
