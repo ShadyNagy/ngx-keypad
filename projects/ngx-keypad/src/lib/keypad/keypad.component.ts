@@ -38,6 +38,18 @@ export class KeypadComponent implements OnInit, OnChanges {
     this._isPassword = value;
   }
 
+  _maxLength: number=null;
+  @Input('maxLength')
+  set maxLength(value: number) {    
+    this._maxLength = value;
+  }
+
+  _maxNumber: number=null;
+  @Input('maxNumber')
+  set maxNumber(value: number) {    
+    this._maxNumber = value;
+  }
+
   _background: string=null;
   @Input('background')
   set background(value: string) {
@@ -84,9 +96,9 @@ export class KeypadComponent implements OnInit, OnChanges {
     } else if (key === 'backspace') {
       this.removeLast();
     } else if ((this._showPeriod) && (key === ',' || key === '.')) {
-      this.data = KeypadService.insertChar(this.data, '.');
+      this.data = KeypadService.insertChar(this.data, '.', this._showPeriod, this._maxLength, this._maxNumber);
     } else if (!isNaN(parseInt(key))) {
-      this.data = KeypadService.insertChar(this.data, key, this._showPeriod);
+      this.data = KeypadService.insertChar(this.data, key, this._showPeriod, this._maxLength, this._maxNumber);
     }
   }
   
@@ -100,7 +112,7 @@ export class KeypadComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    this._data = KeypadService.clearData(this.data);
+    this._data = KeypadService.clearData(this.data, this._showPeriod, this._maxLength, this._maxNumber);
     this.maskIfPassword(this._isPassword);
   }
 
@@ -113,7 +125,7 @@ export class KeypadComponent implements OnInit, OnChanges {
   }
 
   insert(character: string): void {
-    this.data = KeypadService.insertChar(this._data, character, this._showPeriod);  
+    this.data = KeypadService.insertChar(this._data, character, this._showPeriod, this._maxLength, this._maxNumber);  
   }  
 
   reset(): void {

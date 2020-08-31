@@ -14,6 +14,9 @@ If you like or are using this project please give it a star. Thanks!
 - Insert numbers only.
 - Numbers with mask so it is can use as password.
 - Period can use.
+- Hide display if you want.
+- Maximum length for input string.
+- Maximum number can set.
 
 ## ☀️ License
 
@@ -59,6 +62,8 @@ In your template write this code.
 | [showDisplay] | Show Display or not | boolean | true |
 | [showPeriod] | Show period button or not | boolean | true |
 | [isPassword] | Write astrics in the field | boolean | false |
+| [maxLength] | Not allow more length than this max, null is unlimited | number | null |
+| [maxNumber] | Not allow more number than this max, null is unlimited | number | null |
 | [background] | Component background | string | '#ccc' |
 | [width] | Component width can be for ex 400px | string | '100%' |
 | [padding] | Component padding can be for ex 20px | string | '10px' |

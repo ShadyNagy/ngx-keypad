@@ -11,6 +11,8 @@ export class AppComponent {
   showPeriod = true;
   isPassword = true;
   isDisplay = true;
+  maxLength = null;
+  maxNumber = null;
 
   togglePeriod() {
     this.showPeriod = !this.showPeriod;
@@ -22,5 +24,13 @@ export class AppComponent {
 
   toggleDisplay() {
     this.isDisplay = !this.isDisplay;
+  }
+
+  onChangeMaxLength(event) {
+    this.maxLength = event.target.value;
+  }
+
+  onChangeMaxNumber(event) {
+    this.maxNumber = event.target.value;
   }
 }

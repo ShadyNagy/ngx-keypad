@@ -21,7 +21,7 @@ export class KeypadService {
     return result;
   }
 
-  static clearData(value: string) {
+  static clearData(value: string, showPeriod: boolean, maxLength: number, maxNumber: number) {
     if(value === undefined || value === null) {
       return;
     }
@@ -29,15 +29,20 @@ export class KeypadService {
     let result = '';
 
     for (let index = 0; index < value.length; index++) {
+      if(maxLength != null && index >= maxLength) {
+        continue;
+      }
       const element = value[index];
-      result = this.insertChar(result, element);
+      result = this.insertChar(result, element, showPeriod, maxLength, maxNumber);
     }
 
     return result;
   }
 
-  static insertChar(value: string, character: string, showPeriod: boolean=true): string {
-    if(value === undefined || value === null) {
+  static insertChar(value: string, character: string, showPeriod: boolean, maxLength: number, maxNumber: number): string {
+    if(value === undefined || 
+      value === null || 
+      (maxLength != null && value.length >= maxLength)) {
       return value;
     }
 
@@ -53,6 +58,10 @@ export class KeypadService {
       return value;
     }
     
-    return value + character;    
+    if(maxNumber != null && parseInt(`${value}${character}`) > maxNumber) {
+      return `${maxNumber}`;
+    }
+
+    return `${value}${character}`;    
   }
 }

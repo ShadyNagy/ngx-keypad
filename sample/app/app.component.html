@@ -10,13 +10,23 @@
 <input type="checkbox" id="toggleDisplay" name="toggleDisplay" [checked]="isDisplay" (change)="toggleDisplay()" />
 <label for="toggleDisplay"> Is Display </label>
 <br>
+
+<input type="number" id="maxLength" name="maxLength" [value]="maxLength" (change)="onChangeMaxLength($event)" />
+<label for="maxLength"> Maximum Length </label>
+<br>
+
+<input type="number" id="maxNumber" name="maxNumber" [value]="maxNumber" (change)="onChangeMaxNumber($event)" />
+<label for="maxNumber"> Maximum Number </label>
+<br>
+
 <br>
 <span>Result: {{result}}</span>
 
 <hr>
 <h1>Component</h1>
 <div style="width: 400px;">
-  <keypad [showDisplay]="isDisplay" [showPeriod]="showPeriod" [isPassword]="isPassword" [(data)]="result"></keypad>
+  <keypad [showDisplay]="isDisplay" [showPeriod]="showPeriod" [isPassword]="isPassword" 
+    [maxLength]="maxLength" [maxNumber]="maxNumber" [(data)]="result"></keypad>
 </div>
 <hr>
 
