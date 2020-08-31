@@ -83,6 +83,17 @@ In your template write this code.
 <keypad [showPeriod]="true" [isPassword]="false" [(data)]="result"></keypad>
 ```
 
+## Properties
+
+| Property | Description | Type | Default |
+| --- | --- | --- | --- |
+| [showPeriod] | Show period button or not | boolean | true |
+| [isPassword] | Write astrics in the field | boolean | false |
+| [background] | Component background | string | #ccc |
+| [width] | Component width can be for ex 400px | string | 100% |
+| [padding] | Component padding can be for ex 20px | string | 10px |
+| [(data)] | Data input and output | string | null |
+
 ## 🔗 Links
 
 * [NPM](https://www.npmjs.com/package/ngx-keypad)
