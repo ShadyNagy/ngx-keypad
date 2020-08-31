@@ -7,6 +7,13 @@ import { Component, OnInit, HostListener, HostBinding, Input } from '@angular/co
 })
 export class KeypadComponent implements OnInit {
 
+  _showPeriod: boolean=true;
+  @Input('showPeriod')
+  set showPeriod(value: boolean) {    
+    this._showPeriod = value;    
+    console.log('_showPeriod', this._showPeriod );
+  }
+
   _background: string=null;
   @Input('background')
   set background(value: string) {
@@ -59,7 +66,7 @@ export class KeypadComponent implements OnInit {
       this.reset();
     } else if (key === 'backspace') {
       this.removeLast();
-    } else if (key === ',' || key === '.') {
+    } else if ((this._showPeriod) && (key === ',' || key === '.')) {
       this.insertChar('.');
     } else if (!isNaN(parseInt(key))) {
       this.insertChar(key);

@@ -1,1 +1,7 @@
-<keypad></keypad>
+<input type="checkbox" id="togglePeriod" name="togglePeriod" [checked]="showPeriod" (change)="togglePeriod()" />
+<label for="togglePeriod"> Period </label>
+<br>
+
+<div style="width: 400px;">
+  <keypad [showPeriod]="showPeriod"></keypad>
+</div>

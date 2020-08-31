@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sample';
+  showPeriod = true;
+
+  togglePeriod() {
+    this.showPeriod = !this.showPeriod;
+  }
 }
