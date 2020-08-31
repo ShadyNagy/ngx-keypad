@@ -1,4 +1,14 @@
 <p align="center">
+  <a href="https://www.npmjs.com/package/ngx-keypad">
+    <img width="230" src="">
+  </a>
+</p>
+
+<h1 align="center">
+NGX-KEYPAD
+</h1>
+
+<p align="center">
     <a href="https://www.npmjs.com/package/ngx-keypad" alt="npm" target="_blank">
         <img src="https://img.shields.io/npm/v/ngx-keypad" />
     </a>
