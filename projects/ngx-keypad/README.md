@@ -61,7 +61,7 @@ In your template write this code.
 | --- | --- | --- | --- |
 | [showDisplay] | Show Display or not | boolean | true |
 | [showPeriod] | Show period button or not | boolean | true |
-| [isPassword] | Write astrics in the field | boolean | false |
+| [isPassword] | Write asterisk in the field | boolean | false |
 | [maxLength] | Not allow more length than this max, null is unlimited | number | null |
 | [maxNumber] | Not allow more number than this max, null is unlimited | number | null |
 | [background] | Component background | string | '#ccc' |
