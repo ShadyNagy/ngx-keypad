@@ -104,4 +104,4 @@ We welcome all contributions. Please read our [CONTRIBUTING.md](https://github.c
 
 - [ShadyNagy](http://www.shadynagy.com/)
 
-> We list some users here, if your company or product uses ngx-keypad, let us know [here](https://github.com/shadynagy/ngx-keypad/issues/10)!
+> We list some users here, if your company or product uses ngx-keypad, let us know [here](https://github.com/shadynagy/ngx-keypad/issues/8)!
