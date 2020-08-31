@@ -5,6 +5,8 @@ on:
       - v*.*.*
     branches:
       - master # Change this to your default branch
+    paths:
+      - 'projects/ngx-keypad/**'
 jobs:
   npm-publish:
     name: npm-publish
