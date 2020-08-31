@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, HostBinding, Input } from '@angular/core';
+import { Component, OnInit, HostListener, HostBinding, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'keypad',
@@ -7,11 +7,21 @@ import { Component, OnInit, HostListener, HostBinding, Input } from '@angular/co
 })
 export class KeypadComponent implements OnInit {
 
+  _data = '';
+  @Input()
+  get data() {
+    return this._data;
+  }
+  @Output() dataChange = new EventEmitter();
+  set data(val: string) {    
+    this._data = val;    
+    this.dataChange.emit(this._data);
+  }
+
   _showPeriod: boolean=true;
   @Input('showPeriod')
   set showPeriod(value: boolean) {    
-    this._showPeriod = value;    
-    console.log('_showPeriod', this._showPeriod );
+    this._showPeriod = value;
   }
 
   _background: string=null;
@@ -30,13 +40,6 @@ export class KeypadComponent implements OnInit {
   @Input('padding')
   set padding(value: number) {
     this._padding = value || 10;    
-  }
-  
-  _value: string=null;
-  @Input('value')
-  set value(value: string) {
-    this._value = value || '';
-    this.numbers = this._value;
   }
 
   @HostBinding('style')
@@ -72,33 +75,41 @@ export class KeypadComponent implements OnInit {
       this.insertChar(key);
     }
   }
-
-  numbers = '';
   
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  insertChar(character: string): void {
-    if((character === '.' && this.numbers.length <= 0) || (character === '.' && this.numbers.includes('.'))) {
+    if(this._data === undefined || this._data === null) {
       return;
     }
 
-    this.numbers += character;
+    this._data = this._data.replace(/\D/g,'');  
+
+    for (let index = 0; index < this._data.length; index++) {
+      const element = this._data[index];
+      this.insertChar(element);
+    }
   }
 
-  get data(): string {
-    return this.numbers;
+  insertChar(character: string): void {
+    if(this._data === undefined || this._data === null) {
+      return;
+    }
+
+    if((character === '.' && this._data.length <= 0) || (character === '.' && this._data.includes('.'))) {
+      return;
+    }
+
+    this.data += character;
   }
 
   reset(): void {
-    this.numbers = '';
+    this.data = '';
   }
 
   removeLast(): void  {
-    if(this.numbers && this.numbers.length > 0) {
-      this.numbers = this.numbers.substring(0, this.numbers.length - 1);
+    if(this._data && this._data.length > 0) {
+      this.data = this._data.substring(0, this._data.length - 1);
     }    
   } 
 }

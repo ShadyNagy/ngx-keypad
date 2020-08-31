@@ -3,5 +3,7 @@
 <br>
 
 <div style="width: 400px;">
-  <keypad [showPeriod]="showPeriod"></keypad>
+  <keypad [showPeriod]="showPeriod" [(data)]="result"></keypad>
 </div>
+
+<span>Result: {{result}}</span>
