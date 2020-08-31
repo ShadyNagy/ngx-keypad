@@ -12,7 +12,7 @@ If you like or are using this project please give it a star. Thanks!
 ## ✨ Features
 
 - Insert numbers only.
-- Numbers with mask so it is can use as password (POS).
+- Numbers with mask so it is can use as password.
 - Period can use.
 
 ## ☀️ License
@@ -47,6 +47,22 @@ export class AppModule {
 }
 ```
 
+In your template write this code.
+```html
+<keypad [showPeriod]="true" [isPassword]="false" [(data)]="result"></keypad>
+```
+
+## Properties
+
+| Property | Description | Type | Default |
+| --- | --- | --- | --- |
+| [showPeriod] | Show period button or not | boolean | true |
+| [isPassword] | Write astrics in the field | boolean | false |
+| [background] | Component background | string | '#ccc' |
+| [width] | Component width can be for ex 400px | string | '100%' |
+| [padding] | Component padding can be for ex 20px | string | '10px' |
+| [(data)] | Data input and output | string | '' |
+
 ## 🔗 Links
 
 * [NPM](https://www.npmjs.com/package/ngx-keypad)
@@ -73,4 +89,4 @@ We welcome all contributions. Please read our [CONTRIBUTING.md](https://github.c
 
 - [ShadyNagy](http://www.shadynagy.com/)
 
-> We list some users here, if your company or product uses ngx-keypad, let us know [here](https://github.com/shadynagy/ngx-keypad/issues/10)!
+> We list some users here, if your company or product uses ngx-keypad, let us know [here](https://github.com/shadynagy/ngx-keypad/issues/8)!
