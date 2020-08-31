@@ -43,7 +43,7 @@ If you like or are using this project please give it a star. Thanks!
 ## ✨ Features
 
 - Insert numbers only.
-- Numbers with mask so it is can use as password (POS).
+- Numbers with mask so it is can use as password.
 - Period can use.
 
 ## ☀️ License
