@@ -10,6 +10,7 @@ export class AppComponent {
   result = '1234';
   showPeriod = true;
   isPassword = true;
+  isDisplay = true;
 
   togglePeriod() {
     this.showPeriod = !this.showPeriod;
@@ -17,5 +18,9 @@ export class AppComponent {
 
   togglePassword() {
     this.isPassword = !this.isPassword;
+  }
+
+  toggleDisplay() {
+    this.isDisplay = !this.isDisplay;
   }
 }

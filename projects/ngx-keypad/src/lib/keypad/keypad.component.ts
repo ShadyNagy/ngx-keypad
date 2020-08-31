@@ -20,6 +20,12 @@ export class KeypadComponent implements OnInit, OnChanges {
     this.dataChange.emit(this._data);
   }
 
+  _showDisplay: boolean=true;
+  @Input('showDisplay')
+  set showDisplay(value: boolean) {    
+    this._showDisplay = value;
+  }
+
   _showPeriod: boolean=true;
   @Input('showPeriod')
   set showPeriod(value: boolean) {    

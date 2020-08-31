@@ -1,3 +1,4 @@
+<h1>Options</h1>
 <input type="checkbox" id="togglePeriod" name="togglePeriod" [checked]="showPeriod" (change)="togglePeriod()" />
 <label for="togglePeriod"> Period </label>
 <br>
@@ -6,8 +7,17 @@
 <label for="togglePassword"> Is Password </label>
 <br>
 
-<div style="width: 400px;">
-  <keypad [showPeriod]="showPeriod" [isPassword]="isPassword" [(data)]="result"></keypad>
-</div>
-
+<input type="checkbox" id="toggleDisplay" name="toggleDisplay" [checked]="isDisplay" (change)="toggleDisplay()" />
+<label for="toggleDisplay"> Is Display </label>
+<br>
+<br>
 <span>Result: {{result}}</span>
+
+<hr>
+<h1>Component</h1>
+<div style="width: 400px;">
+  <keypad [showDisplay]="isDisplay" [showPeriod]="showPeriod" [isPassword]="isPassword" [(data)]="result"></keypad>
+</div>
+<hr>
+
+

@@ -1,13 +1,13 @@
-# ngx-keypad
+# NGX-KEYPAD
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
-## Give a Star! :star:
+## :star: Give a Star!
 If you like or are using this project please give it a star. Thanks!
 
 ## Screenshot 
 
-![ngx-keypad](https://user-images.githubusercontent.com/6225593/91719292-51029680-eb95-11ea-9d43-a25ead8e5d15.gif)
+![ngx-keypad](https://user-images.githubusercontent.com/6225593/91753134-bff8e300-ebc7-11ea-8da3-8c4b58ca3597.gif)
 
 ## ✨ Features
 
@@ -56,6 +56,7 @@ In your template write this code.
 
 | Property | Description | Type | Default |
 | --- | --- | --- | --- |
+| [showDisplay] | Show Display or not | boolean | true |
 | [showPeriod] | Show period button or not | boolean | true |
 | [isPassword] | Write astrics in the field | boolean | false |
 | [background] | Component background | string | '#ccc' |

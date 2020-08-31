@@ -1,4 +1,4 @@
-<input type="text" [ngModel]="display" class="form-control form-control-lg text-right" readonly>
+<input *ngIf="_showDisplay" type="text" [ngModel]="display" class="form-control form-control-lg text-right" readonly>
 
 <div class="row mt-3">
     <div class="col-8">
