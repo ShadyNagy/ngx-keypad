@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/ngx-keypad">
-    <img width="230" src="">
+    <img width="230" src="icon.png">
   </a>
 </p>
 
