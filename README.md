@@ -78,6 +78,10 @@ export class AppModule {
 }
 ```
 
+```html
+<keypad [showPeriod]="true" [isPassword]="false" [(data)]="result"></keypad>
+```
+
 ## 🔗 Links
 
 * [NPM](https://www.npmjs.com/package/ngx-keypad)
