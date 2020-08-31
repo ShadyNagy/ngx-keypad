@@ -2,8 +2,12 @@
 <label for="togglePeriod"> Period </label>
 <br>
 
+<input type="checkbox" id="togglePassword" name="togglePassword" [checked]="isPassword" (change)="togglePassword()" />
+<label for="togglePassword"> Is Password </label>
+<br>
+
 <div style="width: 400px;">
-  <keypad [showPeriod]="showPeriod" [(data)]="result"></keypad>
+  <keypad [showPeriod]="showPeriod" [isPassword]="isPassword" [(data)]="result"></keypad>
 </div>
 
 <span>Result: {{result}}</span>

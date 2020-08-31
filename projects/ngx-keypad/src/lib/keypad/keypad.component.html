@@ -1,4 +1,4 @@
-<input type="text" [ngModel]="_data" class="form-control form-control-lg text-right" readonly>
+<input type="text" [ngModel]="display" class="form-control form-control-lg text-right" readonly>
 
 <div class="row mt-3">
     <div class="col-8">
@@ -16,44 +16,44 @@
 </div>
 <div class="row mt-3">
     <div class="col-4">
-        <button class="btn btn-primary btn-block" (click)="insertChar('7')">7</button>
+        <button class="btn btn-primary btn-block" (click)="insert('7')">7</button>
     </div>
     <div class="col-4">
-        <button class="btn btn-primary btn-block" (click)="insertChar('8')">8</button>
+        <button class="btn btn-primary btn-block" (click)="insert('8')">8</button>
     </div>
     <div class="col-4">
-        <button class="btn btn-primary btn-block" (click)="insertChar('9')">9</button>
+        <button class="btn btn-primary btn-block" (click)="insert('9')">9</button>
     </div>
 </div>
 <div class="row mt-3">
     <div class="col-4">
-        <button class="btn btn-primary btn-block" (click)="insertChar('4')">4</button>
+        <button class="btn btn-primary btn-block" (click)="insert('4')">4</button>
     </div>
     <div class="col-4">
-        <button class="btn btn-primary btn-block" (click)="insertChar('5')">5</button>
+        <button class="btn btn-primary btn-block" (click)="insert('5')">5</button>
     </div>
     <div class="col-4">
-        <button class="btn btn-primary btn-block" (click)="insertChar('6')">6</button>
+        <button class="btn btn-primary btn-block" (click)="insert('6')">6</button>
     </div>
 </div>
 <div class="row mt-3">
   <div class="col-4">
-    <button class="btn btn-primary btn-block" (click)="insertChar('1')">1</button>
+    <button class="btn btn-primary btn-block" (click)="insert('1')">1</button>
   </div>
   <div class="col-4">
-    <button class="btn btn-primary btn-block" (click)="insertChar('2')">2</button>
+    <button class="btn btn-primary btn-block" (click)="insert('2')">2</button>
   </div>
   <div class="col-4">
-    <button class="btn btn-primary btn-block" (click)="insertChar('3')">3</button>
+    <button class="btn btn-primary btn-block" (click)="insert('3')">3</button>
   </div>
 </div>
 
 
 <div class="row mt-3">
   <div class="col-8">
-    <button class="btn btn-primary btn-block" (click)="insertChar('0')">0</button>
+    <button class="btn btn-primary btn-block" (click)="insert('0')">0</button>
   </div>
   <div class="col-4" *ngIf="_showPeriod">
-    <button class="btn btn-primary btn-block" (click)="insertChar('.')">.</button>
+    <button class="btn btn-primary btn-block" (click)="insert('.')">.</button>
   </div>
 </div>

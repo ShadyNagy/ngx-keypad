@@ -7,10 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sample';
-  result = 'Shady Nagy';
+  result = '1234';
   showPeriod = true;
+  isPassword = true;
 
   togglePeriod() {
     this.showPeriod = !this.showPeriod;
+  }
+
+  togglePassword() {
+    this.isPassword = !this.isPassword;
   }
 }

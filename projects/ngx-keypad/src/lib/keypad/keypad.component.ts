@@ -1,11 +1,12 @@
-import { Component, OnInit, HostListener, HostBinding, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, HostListener, HostBinding, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { KeypadService } from './keypad.service';
 
 @Component({
   selector: 'keypad',
   templateUrl: './keypad.component.html',
   styleUrls: ['./keypad.component.scss'],
 })
-export class KeypadComponent implements OnInit {
+export class KeypadComponent implements OnInit, OnChanges {
 
   _data = '';
   @Input()
@@ -14,7 +15,8 @@ export class KeypadComponent implements OnInit {
   }
   @Output() dataChange = new EventEmitter();
   set data(val: string) {    
-    this._data = val;    
+    this._data = val;
+    this.maskIfPassword(this._isPassword); 
     this.dataChange.emit(this._data);
   }
 
@@ -22,6 +24,12 @@ export class KeypadComponent implements OnInit {
   @Input('showPeriod')
   set showPeriod(value: boolean) {    
     this._showPeriod = value;
+  }
+
+  _isPassword: boolean=false;
+  @Input('isPassword')
+  set isPassword(value: boolean) {    
+    this._isPassword = value;
   }
 
   _background: string=null;
@@ -70,38 +78,37 @@ export class KeypadComponent implements OnInit {
     } else if (key === 'backspace') {
       this.removeLast();
     } else if ((this._showPeriod) && (key === ',' || key === '.')) {
-      this.insertChar('.');
+      this.data = KeypadService.insertChar(this.data, '.');
     } else if (!isNaN(parseInt(key))) {
-      this.insertChar(key);
+      this.data = KeypadService.insertChar(this.data, key, this._showPeriod);
     }
   }
   
+  display = '';
+
   constructor() { }
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes['isPassword']) {
+      this.maskIfPassword(changes['isPassword'].currentValue);
+    }       
+  }
 
   ngOnInit(): void {
-    if(this._data === undefined || this._data === null) {
-      return;
-    }
+    this._data = KeypadService.clearData(this.data);
+    this.maskIfPassword(this._isPassword);
+  }
 
-    this._data = this._data.replace(/\D/g,'');  
-
-    for (let index = 0; index < this._data.length; index++) {
-      const element = this._data[index];
-      this.insertChar(element);
+  maskIfPassword(isPassword: boolean) {
+    if(isPassword) {
+      this.display = KeypadService.createMasked(this._data, '*');
+    }else {
+      this.display = this._data;
     }
   }
 
-  insertChar(character: string): void {
-    if(this._data === undefined || this._data === null) {
-      return;
-    }
-
-    if((character === '.' && this._data.length <= 0) || (character === '.' && this._data.includes('.'))) {
-      return;
-    }
-
-    this.data += character;
-  }
+  insert(character: string): void {
+    this.data = KeypadService.insertChar(this._data, character, this._showPeriod);  
+  }  
 
   reset(): void {
     this.data = '';
