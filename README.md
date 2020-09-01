@@ -34,7 +34,7 @@ NGX-KEYPAD
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
 ## :star: Give a Star!
-If you like or are using this project please give it a star. Thanks!
+If you like or are using this project please give it a star [here](https://github.com/ShadyNagy/ngx-keypad). Thanks!
 
 ## Screenshot 
 
