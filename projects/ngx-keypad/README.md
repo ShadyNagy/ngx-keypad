@@ -1,3 +1,25 @@
+<h1 align="center">
+NGX-KEYPAD
+</h1>
+
+<p align="center">
+    <a href="https://www.npmjs.com/package/ngx-keypad" alt="npm" target="_blank">
+        <img src="https://img.shields.io/npm/v/ngx-keypad" />
+    </a>
+    <a href="https://www.npmjs.com/package/ngx-keypad" alt="npm" target="_blank">
+        <img src="https://img.shields.io/npm/dt/ngx-keypad" />
+    </a>
+    <a href="https://github.com/ShadyNagy/ngx-keypad/actions?query=workflow%3Anpm-publish" alt="Workflows">
+        <img src="https://github.com/shadynagy/ngx-keypad/workflows/npm-publish/badge.svg" />
+    </a>
+    <a href="https://github.com/ShadyNagy/ngx-keypad/blob/master/LICENSE" alt="license">
+        <img src="https://img.shields.io/badge/License-MIT-blue.svg" />
+    </a>
+    <a href="https://www.paypal.me/shadynagy" alt="paypal">
+        <img src="https://img.shields.io/badge/PayPal-tip%20me-green.svg?logo=paypal" />
+    </a>
+</p>
+
 # NGX-KEYPAD
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
