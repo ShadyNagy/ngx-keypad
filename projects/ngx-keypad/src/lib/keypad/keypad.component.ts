@@ -26,6 +26,12 @@ export class KeypadComponent implements OnInit, OnChanges {
     this._showDisplay = value;
   }
 
+  _showTwoZeros: boolean = false;
+  @Input('showTwoZeros')
+  set showTwoZeros(value: boolean) {
+    this._showTwoZeros = value;
+  }
+
   _showPeriod: boolean=true;
   @Input('showPeriod')
   set showPeriod(value: boolean) {    

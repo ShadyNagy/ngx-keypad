@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.github\\workflows",
+    "\\projects",
+    "\\projects\\ngx-keypad",
+    "\\projects\\ngx-keypad\\src\\lib\\keypad"
+  ],
+  "SelectedNode": "\\tsconfig.json",
+  "PreviewInSolutionExplorer": false
+}

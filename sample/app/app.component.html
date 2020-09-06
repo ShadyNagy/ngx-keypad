@@ -3,6 +3,10 @@
 <label for="togglePeriod"> Period </label>
 <br>
 
+<input type="checkbox" id="toggleTwoZeros" name="toggleTwoZeros" [checked]="showTwoZeros" (change)="toggleTwoZeros()" />
+<label for="toggleTwoZeros"> Two Zeros </label>
+<br>
+
 <input type="checkbox" id="togglePassword" name="togglePassword" [checked]="isPassword" (change)="togglePassword()" />
 <label for="togglePassword"> Is Password </label>
 <br>
@@ -25,7 +29,7 @@
 <hr>
 <h1>Component</h1>
 <div style="width: 400px;">
-  <keypad [showDisplay]="isDisplay" [showPeriod]="showPeriod" [isPassword]="isPassword" 
+  <keypad [showTwoZeros]="showTwoZeros" [showDisplay]="isDisplay" [showPeriod]="showPeriod" [isPassword]="isPassword" 
     [maxLength]="maxLength" [maxNumber]="maxNumber" [(data)]="result"></keypad>
 </div>
 <hr>

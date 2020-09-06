@@ -11,11 +11,16 @@ export class AppComponent {
   showPeriod = true;
   isPassword = true;
   isDisplay = true;
+  showTwoZeros = false;
   maxLength = null;
   maxNumber = null;
 
   togglePeriod() {
     this.showPeriod = !this.showPeriod;
+  }
+
+  toggleTwoZeros() {
+    this.showTwoZeros = !this.showTwoZeros;
   }
 
   togglePassword() {
