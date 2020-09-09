@@ -37,7 +37,7 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
         PASSPHRASE: ${{ secrets.PASSPHRASE }}
       with:
-        source: "./dist/ngx-keypad-demo/"
+        source: "./dist/ngx-keypad-demo/*"
         target: ${{ secrets.COPY_TO }}
 
     # - name: Executing remote  command
