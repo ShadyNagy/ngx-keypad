@@ -1,0 +1,49 @@
+name: Deploy
+
+on:
+  push:
+    tags:
+      - v*.*.*
+    branches:
+      - master # Change this to your default branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@master
+
+    - name: Set up Node.js
+      uses: actions/setup-node@master
+      with:
+        node-version: 12.x
+
+    - name: Dependencies Install
+      run: npm install
+
+    - name: Build library
+      run: npm run build ngx-keypad -- --prod
+
+    - name: Build sample
+      run: npm run build --prod
+
+    - name: Copy file via scp
+      uses: appleboy/scp-action@master
+      env:
+        HOST: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSHKEY }}
+      with:
+        source: "./dist/ngx-keypad-demo/**"
+        target: ${{ secrets.COPY_TO }}
+
+    # - name: Executing remote  command
+    #   uses: appleboy/ssh-action@master
+    #   with:
+    #     host: ${{ secrets.HOST }}
+    #     USERNAME: ${{ secrets.USERNAME }}
+    #     PORT: ${{ secrets.PORT }}
+    #     KEY: ${{ secrets.SSHKEY }}
+    #     script: cat /opt/app/README.md
