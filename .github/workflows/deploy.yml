@@ -25,7 +25,6 @@ jobs:
     - name: Build library
       run: npm run build ngx-keypad -- --prod
 
-
     - name: Build sample
       run: npm run build --prod
 
