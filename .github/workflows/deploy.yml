@@ -38,12 +38,14 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         source: "./dist/ngx-keypad-demo"
         target: ${{ secrets.COPY_TO }}
+        script: 
 
-    # - name: Executing remote  command
-    #   uses: appleboy/ssh-action@master
-    #   with:
-    #     host: ${{ secrets.HOST }}
-    #     USERNAME: ${{ secrets.USERNAME }}
-    #     PORT: ${{ secrets.PORT }}
-    #     KEY: ${{ secrets.SSHKEY }}
-    #     script: cat /opt/app/README.md
+    - name: Move files to correct place
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        port: ${{ secrets.PORT }}
+        key: ${{ secrets.SSHKEY }}
+        passphrase: ${{ secrets.PASSPHRASE }}
+        script: mv ${{ secrets.COPY_FROM }} ${{ secrets.COPY_TO }}
