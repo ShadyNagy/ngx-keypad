@@ -45,7 +45,7 @@
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2",
-    "ngx-keypad": "^1.1.7"
+    "ngx-keypad": "~1.1.7"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.12",
