@@ -47,4 +47,4 @@ jobs:
         port: ${{ secrets.PORT }}
         key: ${{ secrets.SSHKEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
-        script: mv ${{ secrets.COPY_FROM }} ${{ secrets.COPY_TO }};rm -rf ${{ secrets.TO_REMOVE }}
+        script: mv ${{ secrets.COPY_FROM }} ${{ secrets.COPY_TO }};rm -rf ${{ secrets.TO_REMOVE }};chcon -Rt httpd_sys_content_t ${{ secrets.COPY_TO }}; nginx -s reload
