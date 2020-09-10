@@ -15,6 +15,9 @@ NGX-KEYPAD
     <a href="https://www.npmjs.com/package/ngx-keypad" alt="npm" target="_blank">
         <img src="https://img.shields.io/npm/dt/ngx-keypad" />
     </a>
+    <a href="https://www.npmjs.com/package/ngx-keypad" alt="npm" target="_blank">
+        <img src="https://badgen.net/bundlephobia/min/ngx-keypad" />
+    </a>  
     <a href="https://github.com/ShadyNagy/ngx-keypad/actions?query=workflow%3Anpm-publish" alt="Workflows">
         <img src="https://github.com/shadynagy/ngx-keypad/workflows/npm-publish/badge.svg" />
     </a>
