@@ -51,7 +51,7 @@ If you like or are using this project please give it a star [here](https://githu
 #### NPM
 
 ```bash
-npm install angular-keypad --save
+npm install ngx-keypad --save
 ```
 
 ## 🔨 Usage
