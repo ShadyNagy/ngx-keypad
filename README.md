@@ -118,6 +118,7 @@ In your template write this code.
 $ git clone git@github.com:ShadyNagy/ngx-keypad.git
 $ cd ngx-keypad
 $ npm install
+$ npm run build ngx-keypad -- --prod
 $ npm run start
 ```
 
