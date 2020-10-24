@@ -26,11 +26,15 @@
 <br>
 <span>Result: {{result}}</span>
 
+<br>
+<span>Test Focus</span>
+<input type="text" id="focused1" name="focused1" (focus)="onFocus()" />
+<input type="text" id="focused2" name="focused2" (focus)="onFocus()" />
 <hr>
 <h1>Component</h1>
 <div style="width: 400px;">
   <keypad [showTwoZeros]="showTwoZeros" [showDisplay]="isDisplay" [showPeriod]="showPeriod" [isPassword]="isPassword" 
-    [maxLength]="maxLength" [maxNumber]="maxNumber" [(data)]="result"></keypad>
+    [maxLength]="maxLength" [maxNumber]="maxNumber" [(data)]="result" (dataChange)="onChange($event)"></keypad>
 </div>
 <hr>
 

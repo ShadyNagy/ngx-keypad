@@ -14,6 +14,7 @@ export class AppComponent {
   showTwoZeros = false;
   maxLength = null;
   maxNumber = null;
+  activeElement: HTMLInputElement;
 
   togglePeriod() {
     this.showPeriod = !this.showPeriod;
@@ -37,5 +38,17 @@ export class AppComponent {
 
   onChangeMaxNumber(event) {
     this.maxNumber = event.target.value;
+  }
+
+  onChange(event) {
+    if (!this.activeElement) {
+      return;
+    }
+    this.activeElement.value = event;
+  }
+
+  onFocus() {
+    this.result = '';
+    this.activeElement = document.activeElement as HTMLInputElement;
   }
 }

@@ -9,7 +9,7 @@ export class KeypadService {
 
   static createMasked(data: string, mask: string) {
     let result = '';
-    if(data === undefined || data === null || data === '') {
+    if (data === undefined || data === null || data === '') {
       return '';
     }
 
@@ -22,14 +22,14 @@ export class KeypadService {
   }
 
   static clearData(value: string, showPeriod: boolean, maxLength: number, maxNumber: number) {
-    if(value === undefined || value === null) {
+    if (value === undefined || value === null) {
       return;
     }
 
     let result = '';
 
     for (let index = 0; index < value.length; index++) {
-      if(maxLength != null && index >= maxLength) {
+      if (maxLength != null && index >= maxLength) {
         continue;
       }
       const element = value[index];
@@ -40,28 +40,54 @@ export class KeypadService {
   }
 
   static insertChar(value: string, character: string, showPeriod: boolean, maxLength: number, maxNumber: number): string {
-    if(value === undefined || 
-      value === null || 
+    if (value === undefined ||
+      value === null ||
       (maxLength != null && value.length >= maxLength)) {
       return value;
     }
 
-    if((character === '.' && value.length <= 0) || (character === '.' && value.includes('.'))) {
+    if ((character === '.' && value.length <= 0) || (character === '.' && value.includes('.'))) {
       return value;
     }
 
-    if((showPeriod) && (character === ',' || character === '.')) {
-      return value + '.'; 
+    if ((showPeriod) && (character === ',' || character === '.')) {
+      return value + '.';
     }
 
-    if(isNaN(parseInt(character))) {
+    if (isNaN(parseInt(character))) {
       return value;
     }
-    
-    if(maxNumber != null && parseInt(`${value}${character}`) > maxNumber) {
+
+    if (maxNumber != null && parseInt(`${value}${character}`) > maxNumber) {
       return `${maxNumber}`;
     }
 
-    return `${value}${character}`;    
+    return `${value}${character}`;
+  }
+
+  static validChar(value: string, character: string, showPeriod: boolean, maxLength: number, maxNumber: number): boolean {
+    if (value === undefined ||
+      value === null ||
+      (maxLength != null && value.length >= maxLength)) {
+      return false;
+    }
+
+    if ((character === '.' && value.length <= 0) || (character === '.' && value.includes('.'))) {
+      return false;
+    }
+
+    if ((showPeriod) && (character === ',' || character === '.')) {
+      return true;
+    }
+
+    if (isNaN(parseInt(character))) {
+      return false;
+    }
+
+    if (maxNumber != null && parseInt(`${value}${character}`) > maxNumber) {
+      return false;
+    }
+
+    return true;
   }
 }
