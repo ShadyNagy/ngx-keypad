@@ -96,7 +96,7 @@ export class KeypadComponent implements OnInit, OnChanges {
 
   @HostListener('window:keydown', ['$event'])
   onKeyDown(event: KeyboardEvent) {
-    const key = event.key.toLowerCase();
+    const key = event?.key?.toLowerCase();
 
     if ((event.ctrlKey || event.metaKey) && event.keyCode === 67) {
       return;
