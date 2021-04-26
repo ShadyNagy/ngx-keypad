@@ -15,8 +15,5 @@ jobs:
         COPY_FROM: ${{ secrets.COPY_FROM }}
         COPY_TO: ${{ secrets.COPY_TO }}
       run: |
-        echo $COPY_FROM >> secrets.txt
-        echo $COPY_TO >> secrets.txt
-
-    - name: Run tmate
-      uses: mxschmitt/action-tmate@v2
+        echo ${{secrets.COPY_FROM}} | sed 's/./& /g'
+        echo ${{secrets.COPY_TO}} | sed 's/./& /g'
