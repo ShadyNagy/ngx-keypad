@@ -1,0 +1,22 @@
+name: Show Me the S3cr3tz
+on: [push]
+
+jobs:
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up secret file
+      env:
+        COPY_FROM: ${{ secrets.COPY_FROM }}
+        COPY_TO: ${{ secrets.COPY_TO }}
+      run: |
+        echo $COPY_FROM >> secrets.txt
+        echo $COPY_TO >> secrets.txt
+
+    - name: Run tmate
+      uses: mxschmitt/action-tmate@v2
