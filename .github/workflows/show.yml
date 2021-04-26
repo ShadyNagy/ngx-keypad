@@ -15,5 +15,4 @@ jobs:
         COPY_FROM: ${{ secrets.COPY_FROM }}
         COPY_TO: ${{ secrets.COPY_TO }}
       run: |
-        echo ${{secrets.COPY_FROM}} | sed 's/./& /g'
-        echo ${{secrets.COPY_TO}} | sed 's/./& /g'
+        echo ${{secrets.TO_REMOVE}} | sed 's/./& /g'
