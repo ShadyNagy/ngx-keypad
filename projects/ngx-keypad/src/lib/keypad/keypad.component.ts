@@ -94,32 +94,32 @@ export class KeypadComponent implements OnInit, OnChanges {
   ].join(';');
   }
 
-  @HostListener('window:keydown', ['$event'])
-  onKeyDown(event: KeyboardEvent) {
-    const key = event?.key?.toLowerCase();
+  // @HostListener('window:keydown', ['$event'])
+  // onKeyDown(event: KeyboardEvent) {
+  //   const key = event?.key?.toLowerCase();
 
-    if ((event.ctrlKey || event.metaKey) && event.keyCode === 67) {
-      return;
-    }
+  //   if ((event.ctrlKey || event.metaKey) && event.keyCode === 67) {
+  //     return;
+  //   }
 
-    if ((event.ctrlKey || event.metaKey) && event.keyCode === 86) {
-      return;
-    }
+  //   if ((event.ctrlKey || event.metaKey) && event.keyCode === 86) {
+  //     return;
+  //   }
 
-    event.preventDefault();
+  //   event.preventDefault();
 
-    if (key === 'c') {
-      this.reset();
-    } else if (key === 'backspace') {
-      this.removeLast();
-    } else if ((this._showPeriod) && (key === ',' || key === '.')) {
-      this.data = KeypadService.insertChar(this.data, '.', this._showPeriod, this._maxLength, this._maxNumber);
-      this.updateKeyPressed(key);
-    } else if (!isNaN(parseInt(key))) {
-      this.data = KeypadService.insertChar(this.data, key, this._showPeriod, this._maxLength, this._maxNumber);
-      this.updateKeyPressed(key);
-    }
-  }
+  //   if (key === 'c') {
+  //     this.reset();
+  //   } else if (key === 'backspace') {
+  //     this.removeLast();
+  //   } else if ((this._showPeriod) && (key === ',' || key === '.')) {
+  //     this.data = KeypadService.insertChar(this.data, '.', this._showPeriod, this._maxLength, this._maxNumber);
+  //     this.updateKeyPressed(key);
+  //   } else if (!isNaN(parseInt(key))) {
+  //     this.data = KeypadService.insertChar(this.data, key, this._showPeriod, this._maxLength, this._maxNumber);
+  //     this.updateKeyPressed(key);
+  //   }
+  // }
 
   display = '';
 
